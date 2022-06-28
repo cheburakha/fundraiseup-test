@@ -15,6 +15,7 @@ module.exports = [
         },
       ],
     },
+    stats: 'summary',
     resolve: {
       extensions: ['.tsx', '.ts', '.js', '.json'],
     },
@@ -36,6 +37,7 @@ module.exports = [
         },
       ],
     },
+    stats: 'summary',
     resolve: {
       extensions: ['.tsx', '.ts', '.js', '.json'],
     },
@@ -57,6 +59,7 @@ module.exports = [
         },
       ],
     },
+    stats: 'summary',
     resolve: {
       extensions: ['.tsx', '.ts', '.js', '.json'],
     },

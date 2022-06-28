@@ -1,4 +1,8 @@
 {
   "SERVER_PATH": "http://localhost:8000",
-  "TRACKER_PATH": "http://localhost:8001"
+  "TRACKER_PATH": "http://localhost:8001",
+  "MONGODB_CONNECTION": "mongodb://localhost:27017",
+  "MONGODB_DATABASE": "fundraiseup-test",
+  "MONGODB_USER": "rolando",
+  "MONGODB_PASSWORD": "k034782k"
 }

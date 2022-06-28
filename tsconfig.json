@@ -13,5 +13,13 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
+    "paths": {
+      "@app/shared": [
+        "shared/src"
+      ],
+      "@app/shared/*": [
+        "shared/src/*"
+      ]
+    }
   }
 }
