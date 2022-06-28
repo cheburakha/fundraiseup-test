@@ -26,6 +26,6 @@ const trackSchema = new Schema({
   },
 });
 
-const Track = model<ITrack>('Track', trackSchema);
+const Track = model<ITrack>('Track', trackSchema, 'tracks');
 
 export { trackSchema, Track };

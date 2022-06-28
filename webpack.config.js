@@ -1,5 +1,4 @@
 const path = require('path');
-const fs = require('fs');
 
 module.exports = [
   {
@@ -56,6 +55,10 @@ module.exports = [
           test: /\.tsx?$/,
           loader: 'ts-loader',
           exclude: /node_modules/,
+        },
+        {
+          test: /\.worker\.js$/,
+          use: { loader: 'worker-loader' },
         },
       ],
     },

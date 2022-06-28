@@ -11,12 +11,12 @@ import * as config from '../../../config.json';
 import { tracksApiV1 } from './tracks/tracks-service';
 
 const path = config.TRACKER_PATH;
-const { port, host } = new URL(path);
+const { port } = new URL(path);
 const trackerFilePath = join(process.env.PWD, 'dist/tracker-client-bundle.js');
 const trackerApp: Express = express();
 
 trackerApp.use(compression());
-trackerApp.use(cors({ origin: true }));
+trackerApp.use(cors({ origin: true, credentials: true }));
 trackerApp.use(json({ limit: '10mb' }));
 trackerApp.use(
   urlencoded({ limit: '10mb', extended: true, parameterLimit: 1000000 }),
@@ -39,7 +39,7 @@ const main = async () => {
     dbconn?.connection?.readyState === ConnectionStates.connected;
   console.log(`[tracker]: database connected: '${connected}'`);
   trackerApp.listen(parseInt(port), () => {
-    console.log(`[tracker]: service is running at: '${path}'`);
+    console.log(`[tracker]: service is running at port: '${port}'`);
   });
 };
 

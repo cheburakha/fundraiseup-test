@@ -9,13 +9,13 @@ const eventTag = 'tracks.new';
 const tracksApiV1: Express = express();
 
 tracksApiV1.on(eventTag, async (data) => {
-  console.log(`on ${eventTag}, got data`);
   try {
     const tracksData: TracksCreateDto = data as any;
     const tracks = tracksData?.tracks?.map(
       ({ event, tags, title, url, ts }) =>
         new Track({ event, tags, title, url, ts }),
     );
+    console.log(`on ${eventTag}, got tracks: ${tracks.length}`);
     await Track.insertMany(tracks, {});
   } catch (e) {
     console.error(e);
@@ -32,7 +32,7 @@ tracksApiV1.post('/tracks', async ({ body }: Request, res: Response) => {
     res.statusMessage = 'Validation issues';
     return res.status(400).json({ errors, success: false });
   } else {
-    res.json({ success: tracksApiV1.emit(eventTag, body) });
+    return res.json({ success: tracksApiV1.emit(eventTag, body) });
   }
 });
 

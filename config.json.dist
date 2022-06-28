@@ -3,6 +3,6 @@
   "TRACKER_PATH": "http://localhost:8001",
   "MONGODB_CONNECTION": "mongodb://localhost:27017",
   "MONGODB_DATABASE": "fundraiseup-test",
-  "MONGODB_USER": "",
-  "MONGODB_PASSWORD": ""
+  "MONGODB_USER": "{MONGODB_USER}",
+  "MONGODB_PASSWORD": "{MONGODB_PASSWORD}"
 }

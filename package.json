@@ -9,7 +9,9 @@
     "format": "prettier --write \"apps/**/*.ts\"",
     "build": "webpack --mode development",
     "server": "yarn nodemon -q dist/server.js",
+    "start": "yarn concurrently \"nodemon -q dist/server.js\" \"nodemon -q dist/tracker-service.js\"",
     "server:dev": "yarn concurrently \"webpack --mode development --watch\" \"nodemon -q dist/server.js\"",
+    "tracker": "yarn nodemon -q dist/tracker-service.js",
     "tracker:dev": "yarn concurrently \"webpack --mode development --watch\" \"nodemon -q dist/tracker-service.js\""
   },
   "dependencies": {
